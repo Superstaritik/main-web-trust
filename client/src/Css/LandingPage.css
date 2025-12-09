@@ -1,0 +1,306 @@
+/* LandingPage.css */
+
+/* General resets */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+section {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+#home{
+    padding: 0;
+}
+h2 {
+  color: #0072ea;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  background-image: url("../assets/image1.svg"); /* Replace with your background image */
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 5rem;
+  padding-top: 5rem;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  max-width: 400px;
+  z-index: 2;
+}
+/* Navbar */
+.Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Navbar img{
+    padding: 1rem;
+    width: 200px;
+    height: auto;
+    margin-left: 150px;
+}
+.Navbar .Nav nav {
+  display: flex;
+  gap: 3rem;
+  align-items: center; 
+  justify-content: space-between; 
+  font-weight: bold;
+  font-size: 1rem;
+  padding-right: 2rem;
+}
+.Navbar .Nav nav a{
+     text-decoration:none;
+  color: black;
+}
+.Navbar .Nav nav button{
+    padding: 0.5rem;
+   width: 100px;
+    border: none;
+    background-color: rgb(255, 174, 23);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgb(255, 241, 228);
+}
+
+/* Why Choose Us */
+.project-grid {
+  margin-top: 40px;  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.project-grid > div {
+  width: 260px;
+  background-color: #f5f9ff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.project-grid h4 {
+  color: #0072ea;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-grid p {
+  color: #555;
+  font-size: 0.95rem;
+}
+.aboutCenter > div{
+    width: 100%;
+    justify-content: center;
+
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+    height: 500px;
+}
+.content .content1{
+    padding: 100px;
+    padding-top: 150px;
+    width: 400px;
+}
+.content .content2 img:nth-of-type(1) {
+    width: 300px;
+    height: auto;
+    /* margin-top: 100px; */
+    /* padding-top: 100px; */
+}
+.content .content2 img:nth-of-type(2) {
+    
+    width: 200px;
+    height: auto;
+    margin-bottom: 100px;
+}
+.content .content2 img:nth-of-type(3) {
+    width: 200px;
+    height: auto;
+    margin-left: 250px;
+}
+
+/* Projects Section */
+.projects-section {
+  background-color: #f5f9ff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.project-scroll-container {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding-bottom: 1rem;
+}
+
+.project-grid {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+/* Optional: Hide default scrollbar and make it custom (optional aesthetic) */
+.project-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.project-scroll-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.project-scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+/* Clients Section */
+.client-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.client-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  overflow-x: auto;
+  white-space: nowrap;  
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+
+.client-grid::-webkit-scrollbar {
+  height: 2px;
+}
+
+.client-grid::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 10px;
+}
+
+.client-grid::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+.scroll-wrapper {
+    margin-top: 100px;
+  overflow-x: auto;
+}
+
+
+/* Newsletter Section */
+.newsletter-section {
+
+  background-color: #1e88e5;
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.newsletter-section img{
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+.newsletter-section h2 {
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+    font-size: 2rem;
+    height: auto;
+  }
+
+  .hero-section form {
+    position: static;
+    margin-top: 1rem;
+  }
+
+  .project-grid > div,
+  .project-grid,
+  .client-grid {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-grid > div,
+  .client-grid > div {
+    width: 90%;
+  }
+}
+/* Why Choose Us Section */
+.why-choose-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.why-choose-grid div {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.why-choose-grid img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1rem;
+}
+
+/* About Section */
+.about-section {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #f5f9ff;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.about-section h4 {
+  color: #0072ea;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  color: #555;
+  line-height: 1.7;
+  font-size: 1rem;
+}
