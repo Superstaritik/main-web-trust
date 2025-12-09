@@ -24,9 +24,10 @@ app.use('/api/newsletter', newsletterRoutes);
 
 main()
 .then(async ()=>{
-    app.listen(process.env.PORT,()=>{
-        console.log("server listening at port number : "+process.env.PORT);
-    });
+    const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log("Server listening at port number : " + PORT);
+});
 })
 .catch((err)=>{
     console.log("error occured "+err);
