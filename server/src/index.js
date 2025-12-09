@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
-const main = require('./config/db');
+const connectDB = require('./config/db'); // assume this exports a function connectDB
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const projectRoutes = require('./routes/projectRoutes');
@@ -14,21 +14,32 @@ app.use(cors({
   credentials:true
 }));
 
+
 app.use(express.json());
 app.use(cookieParser());
-app.use('/',projectRoutes);
+app.use('/', projectRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/clients', clientRoutes);
 app.use('/api/contacts', contactRoutes);
 app.use('/api/newsletter', newsletterRoutes);
 
-main()
-.then(async ()=>{
-    const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log("Server listening at port number : " + PORT);
-});
-})
-.catch((err)=>{
-    console.log("error occured "+err);
-})
+// Debug logs for environment
+console.log('== Starting server file ==');
+console.log('NODE_ENV:', process.env.NODE_ENV);
+console.log('PORT env:', process.env.PORT);
+console.log('FRONTEND_URL:', FRONTEND_URL);
+console.log('MONGO_URI present?:', !!process.env.MONGO_URI);
+
+// Start DB then server
+(async () => {
+  try {
+    await connectDB(); // connectDB should resolve when DB connected or throw
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => {
+      console.log('✅ Server listening at port number : ' + PORT);
+    });
+  } catch (err) {
+    console.error('❌ Failed to start server because DB connection failed:', err);
+    // don't crash immediately in debug; you may optionally process.exit(1)
+  }
+})();
