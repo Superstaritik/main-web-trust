@@ -9,8 +9,8 @@ const clientRoutes = require('./routes/clientRoutes');
 const contactRoutes = require('./routes/contactRoutes');
 const newsletterRoutes = require('./routes/newsletterRoutes');
 app.use(cors({
-    origin: "http://localhost:5173",
-//   origin:'https://project-frontend-vnxh.onrender.com',
+    // origin: "http://localhost:5173",
+   origin:'https://mainwebtask.netlify.app/',
   credentials:true
 }));
 
